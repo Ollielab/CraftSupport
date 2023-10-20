@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import WhyUs from "../components/WhyUs.astro";
 import Services from "../components/Services.astro";
+import Testimonials from "../components/Testimonials.astro";
 const { title } = Astro.props;
 ---
 <html lang="en">
@@ -18,8 +19,10 @@ const { title } = Astro.props;
       <Header />
       <slot />
       <Services />
-      <br><br>
+      <br><br><br>
       <WhyUs />
+      <br><br><br>
+      <Testimonials />
       <Footer />
     </main>
   </body>
