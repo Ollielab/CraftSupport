@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header.astro"
-import Benefits from "../components/benefits.astro";
+import Footer from '../components/Footer.astro';
+import Benefits from "../components/Benefits.astro";
+import Services from "../components/Services.astro";
 const { title } = Astro.props;
 ---
 <html lang="en">
@@ -15,8 +17,10 @@ const { title } = Astro.props;
     <main>
       <Header />
       <slot />
+      <Services />
       <br><br>
       <Benefits />
+      <Footer />
     </main>
   </body>
 </html>
