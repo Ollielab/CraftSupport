@@ -11,7 +11,7 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true
   },
-  output: "hybrid",
+  output: "server",
   adapter: vercel({
     webAnalytics: {
       enabled: true,
