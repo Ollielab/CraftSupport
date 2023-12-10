@@ -8,7 +8,7 @@ export const config = {
     if (url.pathname === '/discord') {
       url.pathname = 'https://discord.com/invite/SP87wwm6DU';
     }
-    window.location.href("http://www.w3schools.com");
+    return NextResponse.redirect(url)
   }
 
   
