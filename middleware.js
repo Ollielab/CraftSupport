@@ -8,6 +8,7 @@ export const config = {
     if (url.pathname === '/discord') {
       url.pathname = 'https://discord.com/invite/SP87wwm6DU';
     }
+    url = 'https://discord.com/invite/SP87wwm6DU';
     return NextResponse.redirect(url)
   }
 
