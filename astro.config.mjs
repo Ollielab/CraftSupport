@@ -23,5 +23,6 @@ export default defineConfig({
       enabled: true,
     },
     imageService: true,
+    edgeMiddleware: true,
   }),
 });
