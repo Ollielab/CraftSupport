@@ -16,6 +16,9 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
+    analytics: {
+      enabled: true,
+    },
     speedInsights: {
       enabled: true,
     },
