@@ -1,9 +1,6 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import WhyUs from "../components/WhyUs.astro";
-import Services from "../components/Services.astro";
-import Testimonials from "../components/Testimonials.astro";
 const { title } = Astro.props;
 ---
 <html lang="en">
@@ -11,6 +8,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png+xml" href="/favicon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -18,11 +16,6 @@ const { title } = Astro.props;
     <main>
       <Header />
       <slot />
-      <Services />
-      <br><br><br>
-      <WhyUs />
-      <br><br><br>
-      <Testimonials />
       <Footer />
     </main>
   </body>
