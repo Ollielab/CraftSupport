@@ -8,7 +8,7 @@ import vercel from "@astrojs/vercel/static";
 export default defineConfig({
   site: 'https://craftsupport.net',
   integrations: [tailwind(), sitemap()],
-  output: "server",
+  output: "static",
   adapter: vercel({
     webAnalytics: {
       enabled: true,
