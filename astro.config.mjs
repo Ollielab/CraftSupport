@@ -8,19 +8,16 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: 'https://craftsupport.net',
   integrations: [tailwind(), sitemap()],
-  prefetch: {
-    prefetchAll: true
-  },
   output: "server",
   adapter: vercel({
     webAnalytics: {
       enabled: true,
     },
-    analytics: {
-      enabled: true,
-    },
     speedInsights: {
       enabled: true,
+    },
+    imagesConfig: {
+      sizes: [320, 640, 1280],
     },
     imageService: true,
     edgeMiddleware: true,
