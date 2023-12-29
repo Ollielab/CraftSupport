@@ -1,28 +1,29 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-
 import vercel from "@astrojs/vercel/serverless";
+
+import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://craftsupport.net',
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap(), compress()],
   prefetch: {
     prefetchAll: true
   },
   output: "server",
   adapter: vercel({
     webAnalytics: {
-      enabled: true,
+      enabled: true
     },
     analytics: {
-      enabled: true,
+      enabled: true
     },
     speedInsights: {
-      enabled: true,
+      enabled: true
     },
     imageService: true,
-    edgeMiddleware: true,
-  }),
+    edgeMiddleware: true
+  })
 });
