@@ -21,5 +21,8 @@ export default defineConfig({
     },
     imageService: true,
     edgeMiddleware: true,
+    images: {
+      domains: ['i.pinimg.com']
+    }
   }),
 });
