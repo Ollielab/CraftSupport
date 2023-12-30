@@ -18,5 +18,8 @@ export default defineConfig({
     },
     imageService: true,
     edgeMiddleware: true,
+    imagesConfig: {
+      sizes: [320,640,1280],
+    },
   }),
 });
