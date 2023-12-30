@@ -7,9 +7,6 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://craftsupport.net',
-  image: {
-    endpoint: undefined,
-  },
   integrations: [tailwind(), sitemap()],
   output: "server",
   adapter: vercel({
@@ -19,10 +16,6 @@ export default defineConfig({
     speedInsights: {
       enabled: true,
     },
-    imageService: true,
     edgeMiddleware: true,
-    imagesConfig: {
-      sizes: [320,640,1280],
-    },
   }),
 });
