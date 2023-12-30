@@ -7,6 +7,9 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://craftsupport.net',
+  image: {
+    endpoint: undefined,
+  },
   integrations: [tailwind(), sitemap()],
   output: "server",
   adapter: vercel({
