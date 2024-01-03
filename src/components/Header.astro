@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import logo from "../logo.webp";
 ---
 <div class="bg-[#12141D] mt-5">
-<header class="relative w-auto overflow-hidden md:px-25">
+<header class="relative w-auto overflow-hidden md:px-30">
 <nav class="mx-auto max-w-screen-2xl text-white py-4 lg:px-5 lg:flex justify-between">
     <a href="/#" class="items-center justify-center flex flex-shrink-20 transition ease-in-out hover:scale-105 active:scale-100">
         <Image src={logo} alt="CraftSupport Logo"  widths={[240, 540, 720, logo.width]} sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${logo.width}px`} class="max-h-14 max-w-xs">
