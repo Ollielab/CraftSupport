@@ -1,17 +1,30 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="CraftSupport - 404" transition:animate="fade">
-    <div class=" mt-0 md:mt-40 justify-center">
-        <h1 class="text-center"><span class="text-white scale-200 material-symbols-outlined">error</span></h1>
-        <br>
-        <h1 class="lg:text-4xl text-2xl text-center font-semibold text-white">404 - Page Not Found</h1>
-        <br>
-        <p class="text-md text-center font-semibold text-white mx-5">Hmm? It seems the page you're looking for either doesn't exist or is having trouble loading. <br> Click the button below to be redirected to the front page.</p>
-        <br><br>
+    <div class="mt-0 md:mt-40 justify-center">
+        <h1 class="text-center">
+            <span class="text-white scale-200 material-symbols-outlined"
+                >error</span
+            >
+        </h1>
+        <br />
+        <h1 class="lg:text-4xl text-2xl text-center font-semibold text-white">
+            404 - Page Not Found
+        </h1>
+        <br />
+        <p class="text-md text-center font-semibold text-white mx-5">
+            Hmm? It seems the page you're looking for either doesn't exist or is
+            having trouble loading. <br /> Click the button below to be redirected
+            to the front page.
+        </p>
+        <br /><br />
         <div class="flex justify-center text-white">
-         <a class="text-sm sm:text-lg sm:px-3 px-2 py-3 mx-1 rounded-full transition ease-in-out hover:scale-110 active:scale-100 font-semibold bg-sky-700 shadow-inner shadow-sky-950 drop-shadow-sm" href="/">Return</a>
+            <a
+                class="text-sm sm:text-lg sm:px-3 px-2 py-3 mx-1 rounded-full transition ease-in-out hover:scale-110 active:scale-100 font-semibold bg-sky-700 shadow-inner shadow-sky-950 drop-shadow-sm"
+                href="/">Return</a
+            >
         </div>
     </div>
 </MainLayout>

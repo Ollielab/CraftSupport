@@ -1,23 +1,32 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 const { title } = Astro.props;
 ---
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/webp+xml" href="/favicon.webp" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="description" content="Minecraft and Linux server solutions. We specialise in plugin configuration, server setup, custom plugin development, proxy integration, off-site data security, and expert sysadmin services.">
-    <title>{title}</title>
-  </head>
-  <body class="bg-[#12141D]">
-    <main>
-      <Header />
-      <ViewTransitions />
-      <slot />
-    </main>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" media="print" onload="this.media='all'" />
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/webp+xml" href="/favicon.webp" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta
+            name="description"
+            content="Minecraft and Linux server solutions. We specialise in plugin configuration, server setup, custom plugin development, proxy integration, off-site data security, and expert sysadmin services."
+        />
+        <title>{title}</title>
+    </head>
+    <body class="bg-[#12141D]">
+        <main>
+            <Header />
+            <ViewTransitions />
+            <slot />
+        </main>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+            media="print"
+            onload="this.media='all'"
+        />
+    </body>
 </html>

@@ -3,6 +3,7 @@ dist/
 # generated types
 .astro/
 
+.zed/
 .vscode/
 
 # dependencies
