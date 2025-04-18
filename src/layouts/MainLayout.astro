@@ -1,6 +1,6 @@
 ---
 import SpeedInsights from "@vercel/speed-insights/astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 const { title } = Astro.props;
 ---
@@ -20,7 +20,7 @@ const { title } = Astro.props;
     <body class="bg-[#12141D]">
         <main>
             <Header />
-            <ViewTransitions />
+            <ClientRouter />
             <slot />
         </main>
         <link
