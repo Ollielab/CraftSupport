@@ -10,11 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.4.1",
-    "@astrojs/vercel": "^8.2.0",
+    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/vercel": "^8.2.5",
     "@tailwindcss/vite": "^4.1.4",
     "@vercel/speed-insights": "^1.1.0",
-    "astro": "^5.10.1",
+    "astro": "^5.12.8",
     "tailwindcss": "^4.1.4"
   }
 }
