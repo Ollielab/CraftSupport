@@ -39,6 +39,24 @@
 </div>
 
 <script is:inline>
+    function initMobileMenu() {
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        if (!toggle || !menu) return;
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const links = menu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    }
+
     function updateActiveLink() {
         const currentPath = window.location.pathname;
         const links = document.querySelectorAll('.nav-link');
@@ -53,27 +71,18 @@
         });
     }
 
-    updateActiveLink();
-    document.addEventListener('astro:page-load', updateActiveLink);
-    
-    function initMobileMenu() {
-        const toggle = document.getElementById('mobile-menu-toggle');
-        const menu = document.getElementById('mobile-menu');
-
-        if (toggle && menu) {
-            toggle.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-
-            const links = menu.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                });
-            });
-        }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            initMobileMenu();
+            updateActiveLink();
+        });
+    } else {
+        initMobileMenu();
+        updateActiveLink();
     }
 
-    initMobileMenu();
-    document.addEventListener('astro:page-load', initMobileMenu);
+    document.addEventListener('astro:page-load', () => {
+        initMobileMenu();
+        updateActiveLink();
+    });
 </script>
