@@ -14,10 +14,10 @@
             </a>
 
             <div class="hidden md:flex gap-6 lg:gap-8">
-                <a href="/solutions" class="text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold">Solutions</a>
-                <a href="/company" class="text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold">Company</a>
-                <a href="/case-studies" class="text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold">Case Studies</a>
-                <a href="/contact" class="text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold">Contact</a>
+                <a href="/solutions" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold" data-path="/solutions">Solutions</a>
+                <a href="/company" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold" data-path="/company">Company</a>
+                <a href="/case-studies" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold" data-path="/case-studies">Case Studies</a>
+                <a href="/contact" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold" data-path="/contact">Contact</a>
             </div>
 
             <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-gray-800/50 rounded transition">
@@ -29,10 +29,10 @@
 
         <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900/50 overflow-hidden">
             <nav class="px-4 py-4 space-y-2">
-                <a href="/solutions" class="block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold">Solutions</a>
-                <a href="/company" class="block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold">Company</a>
-                <a href="/case-studies" class="block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold">Case Studies</a>
-                <a href="/contact" class="block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold">Contact</a>
+                <a href="/solutions" class="nav-link block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold" data-path="/solutions">Solutions</a>
+                <a href="/company" class="nav-link block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold" data-path="/company">Company</a>
+                <a href="/case-studies" class="nav-link block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold" data-path="/case-studies">Case Studies</a>
+                <a href="/contact" class="nav-link block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold" data-path="/contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -41,13 +41,11 @@
 <script is:inline>
     function updateActiveLink() {
         const currentPath = window.location.pathname;
-        const desktopLinks = document.querySelectorAll('.hidden.md\\:flex a');
-        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        const links = document.querySelectorAll('.nav-link');
         
-        const allLinks = [...desktopLinks, ...mobileLinks];
-        allLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === currentPath) {
+        links.forEach(link => {
+            const path = link.getAttribute('data-path');
+            if (path === currentPath) {
                 link.classList.add('text-sky-400');
             } else {
                 link.classList.remove('text-sky-400');
@@ -57,4 +55,25 @@
 
     updateActiveLink();
     document.addEventListener('astro:page-load', updateActiveLink);
+    
+    function initMobileMenu() {
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        if (toggle && menu) {
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            const links = menu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        }
+    }
+
+    initMobileMenu();
+    document.addEventListener('astro:page-load', initMobileMenu);
 </script>
