@@ -1,45 +1,66 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../logo.webp";
+
 ---
 
-<div class="bg-[#12141D] mt-5">
-    <header class="relative w-auto overflow-hidden md:px-30">
-        <nav
-            class="mx-auto max-w-screen-2xl text-white py-4 lg:px-5 lg:flex justify-between"
-        >
-            <a
-                href="/#"
-                class="items-center justify-center flex flex-shrink-20 transition ease-in-out hover:scale-105 active:scale-100"
-            >
-                <Image
-                    src={logo}
+<div class="bg-[#12141D] sticky top-0 z-50 border-b border-gray-800">
+    <header class="relative w-full">
+        <nav class="mx-auto w-full px-4 md:px-6 lg:px-8 xl:px-12 text-white py-4 flex justify-between items-center">
+            <a href="/" class="flex flex-shrink-0 transition ease-in-out hover:scale-105 active:scale-100">
+                <img
+                    src="/logo.webp"
                     alt="CraftSupport Logo"
-                    widths={[240, 540, 720, logo.width]}
-                    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${logo.width}px`}
-                    class="max-h-14 max-w-xs"
+                    class="h-10 sm:h-12 md:h-14 w-auto"
                 />
-
-                <div class="flex justify-center">
-                    <a
-                        class="text-sm sm:text-lg sm:px-3 px-2 py-3 mx-1 hover:underline underline-offset-4 transition ease-in-out hover:scale-110 active:scale-100 font-semibold"
-                        href="/services">Services</a
-                    >
-                    <a
-                        class="text-sm sm:text-lg sm:px-3 px-2 py-3 mx-1 hover:underline underline-offset-4 transition ease-in-out hover:scale-110 active:scale-100 font-semibold"
-                        href="/whyus">Why Us?</a
-                    >
-                    <a
-                        class="text-sm sm:text-lg sm:px-3 px-2 py-3 mx-1 hover:underline underline-offset-4 transition ease-in-out hover:scale-110 active:scale-100 font-semibold"
-                        href="/testimonials">Testimonials</a
-                    >
-                    <a
-                        class="text-sm sm:text-lg sm:px-4 px-3 py-3 mx-1 rounded-full transition ease-in-out hover:scale-110 active:scale-100 font-semibold ring-2 ring-sky-700 bg-transparent shadow-inner shadow-sky-950 drop-shadow-md hover:bg-sky-700/10"
-                        href="https://discord.com/invite/SP87wwm6DU">Discord</a
-                    >
-                </div>
             </a>
+
+            <div class="hidden md:flex gap-6 lg:gap-8">
+                <a href="/solutions" class="text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold">Solutions</a>
+                <a href="/company" class="text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold">Company</a>
+                <a href="/case-studies" class="text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold">Case Studies</a>
+                <a href="/contact" class="text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold">Contact</a>
+            </div>
+
+            <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-gray-800/50 rounded transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </nav>
-        <br /><br />
+
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900/50 overflow-hidden">
+            <nav class="px-4 py-4 space-y-2">
+                <a href="/solutions" class="block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold">Solutions</a>
+                <a href="/company" class="block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold">Company</a>
+                <a href="/case-studies" class="block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold">Case Studies</a>
+                <a href="/contact" class="block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold">Contact</a>
+            </nav>
+        </div>
     </header>
 </div>
+
+<script is:inline>
+    function initMobileMenu() {
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        if (toggle && menu) {
+            const handleToggle = () => {
+                menu.classList.toggle('hidden');
+            };
+
+            const handleLinkClick = () => {
+                menu.classList.add('hidden');
+            };
+
+            toggle.addEventListener('click', handleToggle);
+
+            const links = menu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', handleLinkClick);
+            });
+        }
+    }
+
+    initMobileMenu();
+    document.addEventListener('astro:page-load', initMobileMenu);
+</script>
