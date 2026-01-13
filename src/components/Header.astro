@@ -39,28 +39,22 @@
 </div>
 
 <script is:inline>
-    function initMobileMenu() {
-        const toggle = document.getElementById('mobile-menu-toggle');
-        const menu = document.getElementById('mobile-menu');
-
-        if (toggle && menu) {
-            const handleToggle = () => {
-                menu.classList.toggle('hidden');
-            };
-
-            const handleLinkClick = () => {
-                menu.classList.add('hidden');
-            };
-
-            toggle.addEventListener('click', handleToggle);
-
-            const links = menu.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', handleLinkClick);
-            });
-        }
+    function updateActiveLink() {
+        const currentPath = window.location.pathname;
+        const desktopLinks = document.querySelectorAll('.hidden.md\\:flex a');
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        
+        const allLinks = [...desktopLinks, ...mobileLinks];
+        allLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath) {
+                link.classList.add('text-sky-400');
+            } else {
+                link.classList.remove('text-sky-400');
+            }
+        });
     }
 
-    initMobileMenu();
-    document.addEventListener('astro:page-load', initMobileMenu);
+    updateActiveLink();
+    document.addEventListener('astro:page-load', updateActiveLink);
 </script>
