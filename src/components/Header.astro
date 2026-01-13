@@ -13,7 +13,8 @@
                 />
             </a>
 
-            <div class="hidden md:flex gap-6 lg:gap-8">
+            <div class="hidden md:flex gap-1 lg:gap-2">
+                <a href="/iris" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/iris">IRIS</a>
                 <a href="/solutions" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/solutions">Solutions</a>
                 <a href="/company" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/company">Company</a>
                 <a href="/case-studies" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/case-studies">Case Studies</a>
@@ -29,10 +30,11 @@
 
         <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-gray-50 overflow-hidden">
             <nav class="px-4 py-4 space-y-2">
-                <a href="/solutions" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold hover:scale-105 active:scale-100 origin-left" data-path="/solutions">Solutions</a>
-                <a href="/company" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold hover:scale-105 active:scale-100 origin-left" data-path="/company">Company</a>
-                <a href="/case-studies" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold hover:scale-105 active:scale-100 origin-left" data-path="/case-studies">Case Studies</a>
-                <a href="/contact" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold hover:scale-105 active:scale-100 origin-left" data-path="/contact">Contact</a>
+                <a href="/iris" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/iris">IRIS</a>
+                <a href="/solutions" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/solutions">Solutions</a>
+                <a href="/company" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/company">Company</a>
+                <a href="/case-studies" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/case-studies">Case Studies</a>
+                <a href="/contact" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -56,11 +58,11 @@
             const path = link.getAttribute('data-path');
             const isMobileLink = menu && menu.contains(link);
             
-            link.classList.remove('text-sky-600', 'bg-sky-600/20');
+            link.classList.remove('text-blue-600', 'bg-blue-100');
             if (path === currentPath) {
-                link.classList.add('text-sky-600');
+                link.classList.add('text-blue-600');
                 if (isMobileLink) {
-                    link.classList.add('bg-sky-600/20');
+                    link.classList.add('bg-blue-100');
                 }
             }
         });
