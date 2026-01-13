@@ -13,12 +13,8 @@ export default defineConfig({
   integrations: [sitemap()],
   output: "static",
   adapter: vercel({
-    skewProtection: true,
     webAnalytics: {
       enabled: true,
     },
-    edgeMiddleware: true,
-    isr: true,
-    maxDuration: 8,
   }),
 });
