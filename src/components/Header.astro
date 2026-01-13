@@ -54,10 +54,9 @@
         
         links.forEach(link => {
             const path = link.getAttribute('data-path');
+            link.classList.remove('text-sky-400', 'bg-sky-600/20');
             if (path === currentPath) {
-                link.classList.add('text-sky-400');
-            } else {
-                link.classList.remove('text-sky-400');
+                link.classList.add('text-sky-400', 'bg-sky-600/20');
             }
         });
     }
