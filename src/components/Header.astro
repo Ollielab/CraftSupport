@@ -2,37 +2,37 @@
 
 ---
 
-<div class="bg-[#12141D] sticky top-0 z-50 border-b border-gray-800">
+<div class="bg-white sticky top-0 z-50 border-b border-gray-200">
     <header class="relative w-full">
-        <nav class="mx-auto w-full px-4 md:px-6 lg:px-8 xl:px-12 text-white py-4 flex justify-between items-center">
+        <nav class="mx-auto w-full px-4 md:px-6 lg:px-8 xl:px-12 text-gray-900 py-4 flex justify-between items-center">
             <a href="/" class="flex flex-shrink-0 transition ease-in-out hover:scale-105 active:scale-100">
                 <img
                     src="/logo.webp"
                     alt="CraftSupport Logo"
-                    class="h-10 sm:h-12 md:h-14 w-auto"
+                    class="h-10 sm:h-12 md:h-14 w-auto invert"
                 />
             </a>
 
             <div class="hidden md:flex gap-6 lg:gap-8">
-                <a href="/solutions" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold" data-path="/solutions">Solutions</a>
-                <a href="/company" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold" data-path="/company">Company</a>
-                <a href="/case-studies" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold" data-path="/case-studies">Case Studies</a>
-                <a href="/contact" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold" data-path="/contact">Contact</a>
+                <a href="/solutions" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold text-gray-700 hover:scale-105 active:scale-100 origin-center" data-path="/solutions">Solutions</a>
+                <a href="/company" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold text-gray-700 hover:scale-105 active:scale-100 origin-center" data-path="/company">Company</a>
+                <a href="/case-studies" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold text-gray-700 hover:scale-105 active:scale-100 origin-center" data-path="/case-studies">Case Studies</a>
+                <a href="/contact" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold text-gray-700 hover:scale-105 active:scale-100 origin-center" data-path="/contact">Contact</a>
             </div>
 
-            <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-gray-800/50 rounded transition">
+            <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-gray-100 rounded transition text-gray-900">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </nav>
 
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900/50 overflow-hidden">
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-gray-50 overflow-hidden">
             <nav class="px-4 py-4 space-y-2">
-                <a href="/solutions" class="nav-link block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold" data-path="/solutions">Solutions</a>
-                <a href="/company" class="nav-link block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold" data-path="/company">Company</a>
-                <a href="/case-studies" class="nav-link block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold" data-path="/case-studies">Case Studies</a>
-                <a href="/contact" class="nav-link block px-4 py-3 text-white hover:bg-gray-800/50 rounded transition font-semibold" data-path="/contact">Contact</a>
+                <a href="/solutions" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold hover:scale-105 active:scale-100 origin-left" data-path="/solutions">Solutions</a>
+                <a href="/company" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold hover:scale-105 active:scale-100 origin-left" data-path="/company">Company</a>
+                <a href="/case-studies" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold hover:scale-105 active:scale-100 origin-left" data-path="/case-studies">Case Studies</a>
+                <a href="/contact" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold hover:scale-105 active:scale-100 origin-left" data-path="/contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -56,9 +56,9 @@
             const path = link.getAttribute('data-path');
             const isMobileLink = menu && menu.contains(link);
             
-            link.classList.remove('text-sky-400', 'bg-sky-600/20');
+            link.classList.remove('text-sky-600', 'bg-sky-600/20');
             if (path === currentPath) {
-                link.classList.add('text-sky-400');
+                link.classList.add('text-sky-600');
                 if (isMobileLink) {
                     link.classList.add('bg-sky-600/20');
                 }
