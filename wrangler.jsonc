@@ -1,16 +1,5 @@
 {
-	"main": "dist/_worker.js/index.js",
-	"name": "craftsupport",
-  "compatibility_date": "2026-02-07",
-  "compatibility_flags": [
-    "nodejs_compat",
-    "global_fetch_strictly_public"
-  ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
-	"observability": {
-    "enabled": true
-  }
+  "name": "craftsupport",
+  "compatibility_date": "YYYY-MM-DD", // Update to the day you deploy
+  "pages_build_output_dir": "./dist"
 }
