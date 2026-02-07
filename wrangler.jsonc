@@ -1,5 +1,5 @@
 {
   "name": "craftsupport",
-  "compatibility_date": "YYYY-MM-DD", // Update to the day you deploy
+  "compatibility_date": "2026-02-07", // Update to the day you deploy
   "pages_build_output_dir": "./dist"
 }

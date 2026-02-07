@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && npx wrangler pages publish ./dist --project-name craftsupport"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
