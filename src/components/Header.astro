@@ -1,45 +1,45 @@
 ---
-import logo from '../images/newgen.webp';
+import logo from '../images/newgen.png';
 ---
 
-<div class="bg-white sticky top-0 z-50 border-b border-gray-200">
+<div class="bg-white dark:bg-slate-900 sticky top-0 z-50 border-b border-gray-200 dark:border-slate-700">
     <header class="relative w-full">
         <nav class="mx-auto w-full px-4 md:px-6 lg:px-8 xl:px-12 py-4 flex justify-between items-center">
             <a href="/" class="flex flex-shrink-0 transition ease-in-out hover:scale-105 active:scale-100">
                 <img
                     src={logo.src}
                     alt="CraftSupport Logo"
-                    class="h-9 sm:h-10 md:h-11 w-auto"
+                    class="h-9 sm:h-10 md:h-11 w-auto dark:invert"
+                    style="transition: filter 200ms ease"
                 />
             </a>
 
-            <div class="hidden md:flex gap-1 lg:gap-2">
-                <a href="/iris" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/iris">IRIS</a>
-                <a href="/solutions" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/solutions">Solutions</a>
-                <a href="/company" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/company">Company</a>
-                <a href="/case-studies" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/case-studies">Case Studies</a>
-                <a href="/contact" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center" data-path="/contact">Contact</a>
+            <div class="hidden md:flex gap-1 lg:gap-2 items-center">
+                <a href="/iris" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center text-gray-900 dark:text-gray-100" data-path="/iris">IRIS</a>
+                <a href="/solutions" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center text-gray-900 dark:text-gray-100" data-path="/solutions">Solutions</a>
+                <a href="/company" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center text-gray-900 dark:text-gray-100" data-path="/company">Company</a>
+                <a href="/case-studies" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center text-gray-900 dark:text-gray-100" data-path="/case-studies">Case Studies</a>
+                <a href="/contact" class="nav-link text-base lg:text-lg px-3 py-2.5 hover:underline underline-offset-4 transition font-semibold hover:scale-105 active:scale-100 origin-center text-gray-900 dark:text-gray-100" data-path="/contact">Contact</a>
             </div>
 
-            <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-gray-100 rounded transition text-gray-900">
+            <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded transition text-gray-900 dark:text-gray-100">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </nav>
 
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-gray-50 overflow-hidden">
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 overflow-hidden">
             <nav class="px-4 py-4 space-y-2">
-                <a href="/iris" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/iris">IRIS</a>
-                <a href="/solutions" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/solutions">Solutions</a>
-                <a href="/company" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/company">Company</a>
-                <a href="/case-studies" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/case-studies">Case Studies</a>
-                <a href="/contact" class="nav-link block px-4 py-3 text-gray-900 hover:bg-gray-100 rounded transition font-semibold" data-path="/contact">Contact</a>
+                <a href="/iris" class="nav-link block px-4 py-3 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-slate-700 rounded transition font-semibold" data-path="/iris">IRIS</a>
+                <a href="/solutions" class="nav-link block px-4 py-3 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-slate-700 rounded transition font-semibold" data-path="/solutions">Solutions</a>
+                <a href="/company" class="nav-link block px-4 py-3 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-slate-700 rounded transition font-semibold" data-path="/company">Company</a>
+                <a href="/case-studies" class="nav-link block px-4 py-3 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-slate-700 rounded transition font-semibold" data-path="/case-studies">Case Studies</a>
+                <a href="/contact" class="nav-link block px-4 py-3 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-slate-700 rounded transition font-semibold" data-path="/contact">Contact</a>
             </nav>
         </div>
     </header>
 </div>
-
 <script is:inline>
     function setupHeader() {
         const toggle = document.getElementById('mobile-menu-toggle');

@@ -1,1 +1,19 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		@apply bg-white text-gray-900;
+	}
+
+	.dark body {
+		@apply bg-slate-900 text-slate-100;
+	}
+}
